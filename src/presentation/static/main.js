@@ -64,19 +64,3 @@ async function process() {
         btn.innerText = originalText;
     }
 }
-
-function openDictionary() {
-    document.getElementById('dictionary-modal').classList.add('show');
-}
-
-function closeDictionary() {
-    document.getElementById('dictionary-modal').classList.remove('show');
-}
-
-// Close modal if user clicks outside of it
-window.onclick = function(event) {
-    const modal = document.getElementById('dictionary-modal');
-    if (event.target == modal) {
-        closeDictionary();
-    }
-}

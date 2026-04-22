@@ -15,7 +15,6 @@
         <header>
             <h1>Emoji Cipher</h1>
             <p class="subtitle">Transforme seus textos em mensagens secretas!</p>
-            <button class="dict-btn" onclick="openDictionary()">Ver Dicionário 📖</button>
         </header>
 
         <div class="tabs">
@@ -36,18 +35,13 @@
                 <span class="empty-state">O resultado aparecerá aqui...</span>
             </div>
         </div>
-    </div>
-
-    <!-- Dicionário Modal -->
-    <div id="dictionary-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeDictionary()">&times;</span>
-            <h2>Dicionário de Emojis</h2>
-            <div class="dict-grid">
+        <div class="input-group" style="margin-top: 2rem;">
+            <label>Dicionário:</label>
+            <div class="dict-inline-box">
                 {% for char, emoji in mapping.items() %}
-                <div class="dict-item"><strong>{{ char }}</strong> <span class="arrow">→</span> {{ emoji }}</div>
+                <span class="dict-inline-item" title="{{ char }}"><strong>{{ char }}</strong>={{ emoji }}</span>
                 {% endfor %}
-                <div class="dict-item"><strong>[Espaço]</strong> <span class="arrow">→</span> {{ space }}</div>
+                <span class="dict-inline-item" title="Espaço"><strong>[ ]</strong>={{ space }}</span>
             </div>
         </div>
     </div>

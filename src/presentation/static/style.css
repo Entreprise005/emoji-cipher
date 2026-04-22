@@ -196,115 +196,49 @@ textarea:focus {
     font-size: 1.1rem;
 }
 
-/* Modal and Dictionary Styles */
-.dict-btn {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--primary);
-    border: 1px solid var(--primary);
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 1rem;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.dict-btn:hover {
-    background: var(--primary);
-    color: white;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
-    align-items: center;
-    justify-content: center;
-}
-
-.modal.show {
-    display: flex;
-    animation: fadeIn 0.3s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.modal-content {
-    background: var(--bg-dark);
+/* Inline Dictionary Styles */
+.dict-inline-box {
+    background: rgba(15, 23, 42, 0.6);
     border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 2rem;
-    width: 90%;
-    max-width: 500px;
-    max-height: 80vh;
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    max-height: 150px;
     overflow-y: auto;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Scrollbar styles for the modal content */
-.modal-content::-webkit-scrollbar {
-    width: 8px;
+/* Scrollbar styles for the dictionary box */
+.dict-inline-box::-webkit-scrollbar {
+    width: 6px;
 }
-.modal-content::-webkit-scrollbar-track {
+.dict-inline-box::-webkit-scrollbar-track {
     background: rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+    border-radius: 6px;
 }
-.modal-content::-webkit-scrollbar-thumb {
+.dict-inline-box::-webkit-scrollbar-thumb {
     background: var(--primary);
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
-.modal-content h2 {
-    margin-bottom: 1.5rem;
-    color: var(--text-light);
-    text-align: center;
-}
-
-.close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    color: var(--text-muted);
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.close-btn:hover {
-    color: var(--secondary);
-}
-
-.dict-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 1rem;
-}
-
-.dict-item {
+.dict-inline-item {
     background: rgba(255, 255, 255, 0.05);
-    padding: 0.5rem;
-    border-radius: 8px;
-    text-align: center;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 1.2rem;
+    white-space: nowrap;
+    cursor: default;
+    transition: background 0.2s;
 }
 
-.dict-item strong {
+.dict-inline-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.dict-inline-item strong {
     color: var(--primary);
-}
-
-.dict-item .arrow {
-    color: var(--text-muted);
-    margin: 0 0.25rem;
+    margin-right: 2px;
 }
