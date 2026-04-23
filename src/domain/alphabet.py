@@ -5,7 +5,7 @@ class EmojiAlphabet:
     Define um mapeamento reversível entre caracteres válidos e emojis.
     """
 
-    def __init__(self, mapping: dict[str, str], space_emoji: str):
+    def __init__(self, mapping: dict[str, str]):
         self._char_to_emoji = {}
         self._emoji_to_char = {}
 
@@ -20,10 +20,6 @@ class EmojiAlphabet:
 
             self._char_to_emoji[char] = emoji
             self._emoji_to_char[emoji] = char
-
-        # espaço tratado explicitamente
-        self._char_to_emoji[" "] = space_emoji
-        self._emoji_to_char[space_emoji] = " "
 
     def has_char(self, char: str) -> bool:
         return char.upper() in self._char_to_emoji

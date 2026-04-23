@@ -11,9 +11,8 @@ DEFAULT_MAPPING = {
     '0': '0️⃣', '1': '1️⃣', '2': '2️⃣', '3': '3️⃣', '4': '4️⃣',
     '5': '5️⃣', '6': '6️⃣', '7': '7️⃣', '8': '8️⃣', '9': '9️⃣'
 }
-SPACE_EMOJI = '🟦'
 
-alphabet = EmojiAlphabet(DEFAULT_MAPPING, SPACE_EMOJI)
+alphabet = EmojiAlphabet(DEFAULT_MAPPING)
 cipher = EmojiCipher(alphabet)
 
 def encrypt_text(text: str) -> str:

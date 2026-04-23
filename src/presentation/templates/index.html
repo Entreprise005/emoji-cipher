@@ -22,7 +22,7 @@
             <button class="tab-btn" id="tab-decrypt" onclick="switchMode('decrypt')">Descriptografar 🔓</button>
         </div>
 
-        <div class="input-group">
+        <div class="input-group" id="input-group-text">
             <label id="input-label" for="input-text">Digite o texto para criptografar:</label>
             <textarea id="input-text" placeholder="Ex: Ola mundo"></textarea>
         </div>
@@ -30,7 +30,10 @@
         <button class="action-btn" id="action-btn" onclick="process()">Converter 🚀</button>
 
         <div class="input-group">
-            <label>Resultado:</label>
+            <div id="result-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <label style="margin: 0;">Resultado:</label>
+                <button class="print-btn" id="print-btn" onclick="window.print()" style="display: none;">Imprimir 🖨️</button>
+            </div>
             <div class="result-box" id="result-box">
                 <span class="empty-state">O resultado aparecerá aqui...</span>
             </div>
@@ -41,7 +44,6 @@
                 {% for char, emoji in mapping.items() %}
                 <span class="dict-inline-item" title="{{ char }}"><strong>{{ char }}</strong>={{ emoji }}</span>
                 {% endfor %}
-                <span class="dict-inline-item" title="Espaço"><strong>[ ]</strong>={{ space }}</span>
             </div>
         </div>
     </div>

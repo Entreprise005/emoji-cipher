@@ -8,8 +8,7 @@ def make_cipher():
         "B": "😎",
         "1": "🔢",
     }
-    space_emoji = "⬜"
-    alphabet = EmojiAlphabet(mapping=mapping, space_emoji=space_emoji)
+    alphabet = EmojiAlphabet(mapping=mapping)
     return EmojiCipher(alphabet=alphabet)
 
 
@@ -30,10 +29,10 @@ def test_encrypt_ignores_punctuation():
     assert result == "😀😎"
 
 
-def test_encrypt_converts_space_to_emoji():
+def test_encrypt_preserves_space():
     cipher = make_cipher()
     result = cipher.encrypt("A B")
-    assert result == "😀⬜😎"
+    assert result == "😀 😎"
 
 
 def test_encrypt_ignores_unknown_characters():

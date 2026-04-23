@@ -24,6 +24,7 @@ function hideResult() {
         box.innerHTML = '<span class="empty-state">O resultado aparecerá aqui...</span>';
         box.classList.add('visible');
     }, 300);
+    document.getElementById('print-btn').style.display = 'none';
 }
 
 async function process() {
@@ -52,8 +53,12 @@ async function process() {
         setTimeout(() => {
             if (data.result === "") {
                 box.innerHTML = '<span class="empty-state">Nenhum caractere válido encontrado.</span>';
+                document.getElementById('print-btn').style.display = 'none';
             } else {
                 box.innerText = data.result || data.error;
+                if(data.result && currentMode === 'encrypt') {
+                    document.getElementById('print-btn').style.display = 'block';
+                }
             }
             box.classList.add('visible');
         }, 300);

@@ -15,6 +15,10 @@ class EmojiCipher:
         result = []
 
         for char in text:
+            if char == " ":
+                result.append(" ")
+                continue
+            
             emoji = self._alphabet.char_to_emoji(char)
             if emoji:
                 result.append(emoji)
@@ -26,6 +30,10 @@ class EmojiCipher:
         result = []
 
         for emoji in emojis:
+            if emoji == " ":
+                result.append(" ")
+                continue
+            
             char = self._alphabet.emoji_to_char(emoji)
             if char:
                 result.append(char)
