@@ -7,6 +7,9 @@ from src.application.service import encrypt_text, decrypt_emojis, DEFAULT_MAPPIN
 template_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
 app = Flask(__name__, template_folder=template_dir)
 
+# Segurança: Limita o tamanho máximo da requisição para 1MB para evitar ataques de negação de serviço (DoS)
+app.config['MAX_CONTENT_LENGTH'] = 1 * 1024 * 1024
+
 @app.route('/')
 def index():
     return render_template('index.html', mapping=DEFAULT_MAPPING)
